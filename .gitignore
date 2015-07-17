@@ -1,0 +1,11 @@
+*~
+.#*
+.*.swp
+*.hi
+*.o
+*.log
+*.hepmc
+.cabal-sandbox
+cabal.sandbox.config
+dist
+TAGS

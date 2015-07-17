@@ -1,0 +1,34 @@
+name:                PhotonSpectrum
+version:             0.0.0.0
+synopsis:            Obtaining the photon energy spectrum from MC data
+description:         Obtaining the photon energy spectrum from MC data
+homepage:            https://github.com/cbpark/PhotonSpectrum
+license:             GPL-3
+license-file:        LICENSE
+author:              Chan Beom Park
+maintainer:          cbpark@gmail.com
+copyright:           (c) 2015 Chan Beom Park
+category:            Physics
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     HEP.Data.HepMC.Photon
+                       HEP.Data.Histogram1D
+  build-depends:       base >=4.8
+                     , pipes
+                     , HepMC
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O2
+
+executable test
+  main-is:             test.hs
+  build-depends:       base >=4.8
+                     , pipes
+                     , HepMC
+                     , PhotonSpectrum
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall -O2 -threaded
