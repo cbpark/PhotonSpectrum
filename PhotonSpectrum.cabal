@@ -23,8 +23,8 @@ library
   default-language:    Haskell2010
   ghc-options:         -Wall -O2 -funbox-strict-fields
 
-executable test
-  main-is:             test.hs
+executable photonspectrum
+  main-is:             photonspectrum.hs
   build-depends:       base >=4.8
                      , pipes
                      , HepMC
