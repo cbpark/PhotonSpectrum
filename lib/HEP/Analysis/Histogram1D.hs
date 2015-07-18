@@ -1,4 +1,4 @@
-module HEP.Data.Histogram1D
+module HEP.Analysis.Histogram1D
        (
          Hist1D (..)
        , histogram
