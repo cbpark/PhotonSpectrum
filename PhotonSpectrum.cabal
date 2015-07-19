@@ -27,7 +27,6 @@ library
 executable photonspectrum
   main-is:             photonspectrum.hs
   build-depends:       base >=4.8
-                     , pipes
                      , HepMC
                      , PhotonSpectrum
   hs-source-dirs:      exe

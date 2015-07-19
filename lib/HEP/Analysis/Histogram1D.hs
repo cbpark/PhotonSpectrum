@@ -6,6 +6,7 @@ module HEP.Analysis.Histogram1D
        , integrate
        , add
        , sub
+       , showHist1D
        ) where
 
 import           Data.Vector.Unboxed (Unbox, Vector)
@@ -62,3 +63,8 @@ scaleHist s (Hist1D (Just h)) = Hist1D $ (Just . V.map (\(b, x) -> (b, s*x))) h
 integrate :: Unbox a => Hist1D a -> Double
 integrate (Hist1D Nothing)  = 0
 integrate (Hist1D (Just h)) = V.foldr (\(_, x) i -> x + i) 0 h
+
+showHist1D :: (Show a, Unbox a) => Hist1D a -> String
+showHist1D (Hist1D Nothing)  = ""
+showHist1D (Hist1D (Just h)) = unlines . map toStr $ V.toList h
+  where toStr (b, x) = show b ++ ", " ++ show x
