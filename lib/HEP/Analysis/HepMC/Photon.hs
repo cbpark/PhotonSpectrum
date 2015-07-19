@@ -1,7 +1,6 @@
 module HEP.Analysis.HepMC.Photon where
 
 import           Control.Monad            (forever)
-import           Data.Monoid              ((<>))
 import           Pipes
 import qualified Pipes.Prelude            as P
 import           System.IO                (Handle)
@@ -29,7 +28,7 @@ photonSpectrum :: MonadIO m =>
                -> Double  -- ^ Upper bound
                -> Handle  -- ^ Handle of input file
                -> m (Hist1D Double)
-photonSpectrum nbin lo hi hin = P.fold (<>) mempty id spectra
+photonSpectrum nbin lo hi hin = P.fold mappend mempty id spectra
   where spectra :: MonadIO m => Producer (Hist1D Double) m ()
         spectra = hepmcEvent hin >-> photonEnergies >-> energyDist nbin lo hi
 

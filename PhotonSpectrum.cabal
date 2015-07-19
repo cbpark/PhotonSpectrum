@@ -18,6 +18,7 @@ library
                        HEP.Analysis.Histogram1D
   build-depends:       base >=4.8
                      , pipes
+                     , vector
                      , HepMC
   hs-source-dirs:      lib
   default-language:    Haskell2010
