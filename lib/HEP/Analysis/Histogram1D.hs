@@ -4,6 +4,7 @@ module HEP.Analysis.Histogram1D
        , histogram
        , scaleHist
        , integrate
+       , unitNormalize
        , add
        , sub
        , showHist1D
@@ -63,6 +64,10 @@ scaleHist s (Hist1D (Just h)) = Hist1D $ (Just . V.map (\(b, x) -> (b, s*x))) h
 integrate :: Unbox a => Hist1D a -> Double
 integrate (Hist1D Nothing)  = 0
 integrate (Hist1D (Just h)) = V.foldr (\(_, x) i -> x + i) 0 h
+
+unitNormalize :: Unbox a => Hist1D a -> Hist1D a
+unitNormalize (Hist1D Nothing)  = Hist1D Nothing
+unitNormalize hist              = scaleHist (1.0 / integrate hist) hist
 
 showHist1D :: (Show a, Unbox a) => Hist1D a -> String
 showHist1D (Hist1D Nothing)  = ""
