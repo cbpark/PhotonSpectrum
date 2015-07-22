@@ -5,6 +5,8 @@
 *.o
 *.log
 *.hepmc
+*.dat
+*.log
 .cabal-sandbox
 cabal.sandbox.config
 dist
