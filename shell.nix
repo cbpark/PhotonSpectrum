@@ -7,7 +7,7 @@ let pkg = haskellngPackages.callPackage
                pname = "PhotonSpectrum";
                version = "0.0.0.0";
                src = ./.;
-               isLibrary = true;
+               isLibrary = false;
                isExecutable = true;
                buildDepends = [
                  base hep-utilities HepMC optparse-applicative pipes
