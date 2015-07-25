@@ -3,8 +3,9 @@ module Main where
 import           Options.Applicative
 import           System.IO                 (IOMode (..), withFile)
 
-import           HEP.Analysis.HepMC.Photon (photonSpectrum)
 import           HEP.Analysis.Histogram1D  (showHist1D, unitNormalize)
+
+import           HEP.Analysis.HepMC.Photon (photonSpectrum)
 
 main :: IO ()
 main = execParser opts >>= getSpectrum

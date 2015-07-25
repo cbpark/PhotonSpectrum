@@ -8,7 +8,7 @@ import           System.IO                (Handle)
 import           HEP.Parser.HepMC.Parser  (hepmcEvent)
 import           HEP.Parser.HepMC.Type
 
-import           HEP.Analysis.Histogram1D
+import           HEP.Analysis.Histogram1D (Hist1D, histogram)
 
 finalStates :: Monad m => Pipe GenEvent [GenParticle] m ()
 finalStates = forever $ getPars >-> stable
