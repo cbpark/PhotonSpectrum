@@ -1,7 +1,7 @@
 with (import <nixpkgs> {}).pkgs;
 let pkg = haskellngPackages.callPackage
-            ({ mkDerivation, base, HepMC, optparse-applicative, pipes, stdenv
-             , vector
+            ({ mkDerivation, base, hep-utilities, HepMC, optparse-applicative
+             , pipes, stdenv
              }:
              mkDerivation {
                pname = "PhotonSpectrum";
@@ -9,7 +9,9 @@ let pkg = haskellngPackages.callPackage
                src = ./.;
                isLibrary = true;
                isExecutable = true;
-               buildDepends = [ base HepMC optparse-applicative pipes vector ];
+               buildDepends = [
+                 base hep-utilities HepMC optparse-applicative pipes
+               ];
                homepage = "https://github.com/cbpark/PhotonSpectrum";
                description = "Obtaining the photon energy spectrum from MC data";
                license = stdenv.lib.licenses.gpl3;
