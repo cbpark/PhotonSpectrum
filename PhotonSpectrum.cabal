@@ -15,6 +15,7 @@ cabal-version:       >=1.10
 
 executable photonspectrum
   main-is:             photonspectrum.hs
+  other-modules:       HEP.Analysis.HepMC.Photon
   build-depends:       base >=4.8
                      , optparse-applicative
                      , pipes
